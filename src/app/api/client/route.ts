@@ -3,8 +3,6 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export const POST = async (request: NextRequest) => {
   try {
-    console.log('Called');
-
     const data = await prisma.client.create({
       data: {
         profile: {
