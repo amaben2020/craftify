@@ -24,7 +24,7 @@ model Artisan {
 model Client {
      id Int @id @default(autoincrement())
      profile ClientProfile?
-    jobs ClientJob?
+    postedJobs ClientJob[]
 }
 
 model ClientProfile {
@@ -65,4 +65,6 @@ model ClientJob {
   postedById Int @unique
   appliedBy Artisan @relation(fields: [appliedById], references: [id])
   appliedById Int @unique
+  colorTone String?
+
 }
