@@ -16,6 +16,7 @@ datasource db {
 model Artisan {
    id Int @id @default(autoincrement())
    profile ArtisanProfile?
+   appliedClientJobs ClientJob?
    occupation String?
 }
 
@@ -55,14 +56,12 @@ model Referee{
   contactInformation String
   artisan ArtisanProfile?
 }
-
 model ClientJob {
   id Int @id @default(autoincrement())
   title String
+  images String[]
   postedBy Client @relation(fields: [postedById], references: [id])
   postedById Int @unique
+  appliedBy Artisan @relation(fields: [appliedById], references: [id])
+  appliedById Int @unique
 }
-
-
-
- 
