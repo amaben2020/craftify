@@ -2,18 +2,14 @@ import prisma from '@lib/prisma';
 import { NextRequest, NextResponse } from 'next/server';
 
 export const POST = async (request: NextRequest) => {
+  console.log('yeah');
   try {
-    const data = await prisma.client.create({
+    const data = await prisma.clientJob.create({
       data: {
-        profile: {
-          create: {
-            email: 'amaben1@gmail.com',
-            firstName: 'Amala',
-            lastName: 'Uzor',
-            image: '',
-            address: 'Dugbana',
-          },
-        },
+        title: 'Plumber',
+        images: [''],
+        colorTone: 'red',
+        postedById: 2,
       },
     });
 
@@ -28,5 +24,6 @@ export const POST = async (request: NextRequest) => {
     );
   } catch (error) {
     console.log(error);
+    return error;
   }
 };

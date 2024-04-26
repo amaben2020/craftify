@@ -7,11 +7,11 @@ export const POST = async (request: NextRequest) => {
       data: {
         profile: {
           create: {
-            email: 'amaben1@gmail.com',
-            firstName: 'Amala',
-            lastName: 'Uzor',
+            email: 'amaben2@gmail.com',
+            firstName: 'Amala2',
+            lastName: 'Uzor2',
             image: '',
-            address: 'Dugbana',
+            address: 'Dugbana2',
           },
         },
       },

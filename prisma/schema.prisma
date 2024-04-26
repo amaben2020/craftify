@@ -63,8 +63,7 @@ model ClientJob {
   images String[]
   postedBy Client @relation(fields: [postedById], references: [id])
   postedById Int @unique
-  appliedBy Artisan @relation(fields: [appliedById], references: [id])
-  appliedById Int @unique
+  appliedBy Artisan? @relation(fields: [appliedById], references: [id])
+  appliedById Int? @unique
   colorTone String?
-
 }
