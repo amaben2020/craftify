@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "drop-db": "npx prisma db push --force-reset"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.0.0",
