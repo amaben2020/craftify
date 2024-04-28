@@ -9,7 +9,9 @@ export function SignIn() {
           await signIn('google');
         }}
       >
-        <button type="submit">Signin with Google</button>
+        <button type="submit" className="font-primary text-lg font-bold">
+          Sign in with Google
+        </button>
       </form>
 
       <form
@@ -18,7 +20,9 @@ export function SignIn() {
           await signIn('github');
         }}
       >
-        <button type="submit">Signin with Github</button>
+        <button type="submit" className="font-secondary">
+          Signin with Github
+        </button>
       </form>
     </>
   );

@@ -8,7 +8,9 @@ export function SignOut() {
         await signOut();
       }}
     >
-      <button type="submit">Sign Out</button>
+      <button type="submit" className="font-secondary">
+        Sign Out
+      </button>
     </form>
   );
 }
