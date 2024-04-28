@@ -25,6 +25,7 @@ model Client {
      id Int @id @default(autoincrement())
      profile ClientProfile?
     postedJobs ClientJob[]
+    @@map("clients")
 }
 
 model ClientProfile {
@@ -66,4 +67,6 @@ model ClientJob {
   appliedBy Artisan? @relation(fields: [appliedById], references: [id])
   appliedById Int? @unique
   colorTone String?
+
+  @@map("jobs")
 }
