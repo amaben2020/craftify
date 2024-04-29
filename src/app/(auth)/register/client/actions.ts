@@ -5,7 +5,6 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
 export const registerClient = async (formData: FormData) => {
-  // grab all data (.entries, fromEntries)
   const allUserData = formData.entries();
   const { userId } = Object.fromEntries(allUserData);
 
