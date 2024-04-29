@@ -79,15 +79,15 @@ model Client {
 
 model ClientProfile {
  id Int @id @default(autoincrement())
- firstName String
- lastName String
- email String
- image String
+ image String?
  address String?
+ profession String?
  client Client @relation(fields: [clientId], references: [id])
  clientId Int @unique // relation scalar field i.e foreign key.
  user User @relation(fields: [userId], references: [id])
  userId String @unique
+ createdAt DateTime @default(now())
+ updatedAt        DateTime           @updatedAt
 }
 
 
