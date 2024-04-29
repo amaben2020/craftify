@@ -46,7 +46,7 @@ model User {
   email         String?   @unique
   emailVerified DateTime? @map("email_verified")
   image         String?
-  role          Role     
+  role          Role?     
   accounts      Account[]
   sessions      Session[]
   @@map("users")
@@ -120,6 +120,5 @@ model ClientJob {
   appliedBy Artisan? @relation(fields: [appliedById], references: [id])
   appliedById Int? @unique
   colorTone String?
-
   @@map("jobs")
 }
