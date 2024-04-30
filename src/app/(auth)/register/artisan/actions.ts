@@ -28,15 +28,18 @@ export const registerArtisan = async (formData: FormData) => {
       data: {
         profile: {
           create: {
-            occupation: '',
             userId: String(userId) ?? '',
-            profession: 'Senior Software Engineer',
+            email: 'amaben202phantom@gmail.com',
+            howDidYouHearAboutUs: 'Linkedin',
+            occupation: 'Plumber',
+            sex: 'Male',
+            username: 'algomachine',
           },
         },
       },
     });
-    revalidatePath('/?client=true');
-    redirect('/?client=true');
+    revalidatePath('/?artisan=true');
+    redirect('/?artisan=true');
   }
 
   if (doesClientExist) {

@@ -119,19 +119,19 @@ model ArtisanProfile {
  id Int @id @default(autoincrement())
  username String
  email String
- occupation String?
+ occupation Skill?
  artisan Artisan @relation(fields: [artisanId], references: [id])
  artisanId Int @unique // relation scalar field i.e foreign key
- refereeId Int @unique
- referee Referee @relation(fields: [refereeId], references: [id])
+ refereeId Int? @unique
+ referee Referee? @relation(fields: [refereeId], references: [id])
  user User @relation(fields: [userId], references: [id])
  userId String @unique
  howDidYouHearAboutUs String?
  address String?
  phoneNumber Int?
  sex Sex
- identification Identification
- identificationNumber Int @default(10000000001)
+ identification Identification?
+ identificationNumber Int? 
 
 }
 
