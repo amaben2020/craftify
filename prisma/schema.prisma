@@ -40,6 +40,20 @@ model Session {
   ARTISAN
   CLIENT
 }
+
+ enum Skill {
+  Plumber
+  Carpenter
+  Mechanic
+  Tiler
+  Mason
+  Digger
+  Evacuator
+  Electrician
+  ACRepairer
+
+}
+
 model User {
   id            String    @id @default(cuid())
   name          String?
@@ -90,6 +104,16 @@ model ClientProfile {
  updatedAt        DateTime           @updatedAt
 }
 
+enum Sex {
+  Male
+  Female
+}
+
+enum Identification {
+  DriversLicence
+  BVN
+  NIN
+}
 
 model ArtisanProfile {
  id Int @id @default(autoincrement())
@@ -102,6 +126,13 @@ model ArtisanProfile {
  referee Referee @relation(fields: [refereeId], references: [id])
  user User @relation(fields: [userId], references: [id])
  userId String @unique
+ howDidYouHearAboutUs String?
+ address String?
+ phoneNumber Int?
+ sex Sex
+ identification Identification
+ identificationNumber Int @default(10000000001)
+
 }
 
 model Referee{
@@ -122,3 +153,4 @@ model ClientJob {
   colorTone String?
   @@map("jobs")
 }
+
